@@ -112,18 +112,105 @@ class LoopsNotes {
         // #######################################
 
         /*
-            1.) Expected output of a loop
-            2.) Write a loop to iterate over a range of values
-            3.) Write a loop to iterate over an array (WE WILL COVER THIS LATER)
-            4.) Write a loop to iterate over a 2D array (WE WILL COVER THIS LATER)
-            5.) Write a loop to print a pattern (* or numbers)
-            6.) How many times a loop will iterate
+         * 1.) Expected output of a loop
+         * 2.) Write a loop to iterate over a range of values
+         * 3.) Write a loop to iterate over an array (WE WILL COVER THIS LATER)
+         * 4.) Write a loop to iterate over a 2D array (WE WILL COVER THIS LATER)
+         * 5.) Write a loop to print a pattern (* or numbers)
+         * 6.) How many times a loop will iterate
          */
 
         // #######################################
-        // Common Questions and How to Solve Them
+        // Common Questions and Strategies to Solve Them
         // #######################################
-
         
+        // 1.) Constructing nested loops for a given output
+        {   
+            // General Strategy:
+            // Outer loop controls the number of rows (y) 
+            // Inner loop controls the number of things in each row (x)
+            // Y value determines the number of iterations for the inner loop
+            // If the number of things per row is decreasing, the outer loop should be -- (decrement)
+            // If the number of things per row is increasing, the outer loop should be ++ (increment)
+
+            // Example 1:
+            // Print the following pattern:
+            // 54321
+            // 4321
+            // 321
+            // 21
+            // 1
+
+            // Number of elements in each row is decreasing so --
+            // Y starts off at 5 and decreases to 0 because first row is 5 to 1
+            for (int y = 5; y > -1; y--) {
+                // y: 5, 4, 3, 2, 1, 0 (Step 1)
+
+                // Value of x is decreasing as well so --
+                // x starts off at y and decreases to 0 because first row is 5 to 1
+                for (int x = y; x > 0; x--) {
+                    // y: 5 then x: 5, 4, 3, 2, 1
+                    // y: 4 then x: 4, 3, 2, 1
+                    // y: 3 then x: 3, 2, 1
+                    // y: 2 then x: 2, 1
+                    // y: 1 then x: 1
+                    // y: 0 then x: 0
+                    System.out.print(x + " ");
+                }
+                // Move to the next line after completing each row
+                System.out.println("");
+            }
+            // Move to the next line after completing each row
+            System.out.println("");
+        }
+
+        // 2.) DTO
+        {
+            // General Strategy:
+            // First Write down all the possible values of y (Step 1)
+            // Then write down all the possible values of x for each value of y (Step 2)
+            // Then write the output of the print statement which is the answer (Step 3)
+
+            // Example 1:
+            for (int y = 5; y > 0; y--) {
+                // y: 5, 4, 3, 2, 1 (Step 1)
+
+                for (int x = y; x > 0; x--) {
+                    // y: 5 then x: 5, 4, 3, 2, 1 (Step 2)
+                    // y: 4 then x: 4, 3, 2, 1
+                    // y: 3 then x: 3, 2, 1
+                    // y: 2 then x: 2, 1
+                    // y: 1 then x: 1
+                    System.out.print("*");
+                }
+                System.out.println("");
+            }
+            // Output: (Step 3)
+            // *****
+            // ****
+            // ***
+            // **
+            // *
+
+            // Example 2:
+            for (int y = 0; y < 5; y++) {
+                // y: 0, 1, 2, 3, 4 (Step 1)
+                for (int x = y; x > 0; x--) {
+                    // y: 0 then x: 0
+                    // y: 1 then x: 1
+                    // y: 2 then x: 2, 1
+                    // y: 3 then x: 3, 2, 1
+                    // y: 4 then x: 4, 3, 2, 1
+                    System.out.print(x + " ");
+                }
+                System.out.println("");
+            }
+            // Output: (Step 3)
+            // 1
+            // 2 1
+            // 3 2 1
+            // 4 3 2 1
+        }
+
     }
 }
