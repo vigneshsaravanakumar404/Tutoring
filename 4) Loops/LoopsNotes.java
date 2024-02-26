@@ -1,6 +1,4 @@
-package Notes; // Don't worry about this line
-
-class Loops {
+class LoopsNotes {
 
     // * Chapter 4 Loops
     public static void main(String[] args) {
@@ -109,9 +107,23 @@ class Loops {
          * Practice analyzing loops for correctness and efficiency.
          */
 
+        // #######################################
+        // Things you should be able to do
+        // #######################################
+
+        /*
+            1.) Expected output of a loop
+            2.) Write a loop to iterate over a range of values
+            3.) Write a loop to iterate over an array (WE WILL COVER THIS LATER)
+            4.) Write a loop to iterate over a 2D array (WE WILL COVER THIS LATER)
+            5.) Write a loop to print a pattern (* or numbers)
+            6.) How many times a loop will iterate
+         */
 
         // #######################################
         // Common Questions and How to Solve Them
         // #######################################
+
+        
     }
 }
